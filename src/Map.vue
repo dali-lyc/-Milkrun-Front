@@ -1,68 +1,76 @@
 <template>
   <div class="body">
+    <p class="header">Milkrun Real-time system</p>
     <el-row style="padding: 0px 20px;">
       <el-col :span="12" style="padding: 10px;">
         <el-card>
-          <div class="chart">Line1</div>
+          <div class="line">Line1</div>
           <el-row>
-            <el-col :span="8">
-              <el-card class="card1">
-                <span>80% / 95%</span>
-                <span>Avg. OTD</span>
-              </el-card>
+            <el-col :span="7">
+              <router-link to="/reportOTD" style="text-decoration: none">
+                <el-card class="card1">
+                  <p style="margin-top: 45px;">80% / 95%</p>
+                  <p>Avg. OTD</p>
+                </el-card>
+              </router-link>
             </el-col>
-            <el-col :span="8">
-              <el-card class="card1">
-                <span>2min / 5min</span>
-                <span>efficiency</span>
-              </el-card>
+            <el-col :span="10">
+              <router-link to="/reportLocation" style="text-decoration: none">
+                <el-card class="card2">
+                  <p>2min / 5min</p>
+                  <p>location2 efficiency</p>
+                </el-card>
+                <el-card class="card2">
+                  <p>4min / 5min</p>
+                  <p>location3 efficiency</p>
+                </el-card>
+              </router-link>
             </el-col>
-            <el-col :span="8">
-              <el-card class="card1">
-                <span>1 / 0</span>
-                <span>Failure</span>
-              </el-card>
+            <el-col :span="7">
+              <router-link to="/reportError" style="text-decoration: none">
+                <el-card class="card1">
+                  <p style="margin-top: 45px;">1 / 0</p>
+                  <p>Failure</p>
+                </el-card>
+              </router-link>
             </el-col>
           </el-row>
         </el-card>
       </el-col>
       <el-col :span="12" style="padding: 10px;">
         <el-card>
-          <div class="chart">Line2</div>
+          <div class="line">Line2</div>
           <el-row>
-            <el-col :span="8">
+            <el-col :span="7">
               <el-card class="card1">
-                <span>80% / 95%</span>
-                <span>Avg OTD</span>
+                <p style="margin-top: 45px;">80% / 95%</p>
+                <p>Avg. OTD</p>
               </el-card>
             </el-col>
-            <el-col :span="8">
-              <el-card class="card1">
-                <span>20 / 30</span>
-                <span>efficiency</span>
+            <el-col :span="10">
+              <el-card class="card2">
+                <p>2min / 5min</p>
+                <p>location2 efficiency</p>
+              </el-card>
+              <el-card class="card2">
+                <p>4min / 5min</p>
+                <p>location3 efficiency</p>
               </el-card>
             </el-col>
-            <el-col :span="8">
+            <el-col :span="7">
               <el-card class="card1">
-                <span>1 / 0</span>
-                <span>Failure</span>
+                <p style="margin-top: 45px;">1 / 0</p>
+                <p>Failure</p>
               </el-card>
             </el-col>
           </el-row>
         </el-card>
       </el-col>
     </el-row>
-    <el-row style="padding: 0px 20px;">
-      <el-col :span="12" style="padding: 10px;">
-        <el-card>
-          <div class="map">map1</div>
-        </el-card>
-      </el-col>
-      <el-col :span="12" style="padding: 10px;">
-        <el-card>
-          <div class="map">map2</div>
-        </el-card>
-      </el-col>
+    <el-row style="padding: 0px 28px;">
+      <el-card>
+        <div class="map">map</div>
+      </el-card>
     </el-row>
   </div>
 </template>
@@ -96,7 +104,25 @@ export default {
   border-color: #75a4d5;
   box-shadow: none;
   margin: 10px 10px 0;
-  height: 80px;
-  color: #FFF;
+  height: 165px;
+  color: #fff;
+}
+.card2 {
+  background: #75a4d5;
+  border-color: #75a4d5;
+  box-shadow: none;
+  margin: 10px 10px 0;
+  color: #fff;
+}
+.card1 p,
+.card2 p {
+  margin: 0px;
+}
+.header {
+  display: inline-block;
+  text-align: center;
+  font-size: 30px;
+  color: #7a7f87;
+  margin: 10px 0 10px 0;
 }
 </style>
