@@ -12,14 +12,14 @@ export default new Router({
       path: '/dispatch',
       component: () => import('@/Dispatch.vue')
     }, {
-      path: '/settlement',
-      component: () => import('@/Settlement.vue'),
+      path: '/configure',
+      component: () => import('@/Configure.vue'),
     }, {
       path: '/reportOTD',
       component: () => import('@/ReportOTD.vue'),
     }, {
-      path: '/reportLocation',
-      component: () => import('@/ReportLocation.vue'),
+      path: '/reportStation',
+      component: () => import('@/ReportStation.vue'),
     }, {
       path: '/reportError',
       component: () => import('@/ReportError.vue'),

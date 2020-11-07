@@ -1,15 +1,22 @@
 <template>
   <div class="body">
+    <el-header style="height: 10px;">
+      <img src="./assets/img/bottom.png" style="height: 10px; position: fixed; left: 0; width: 100%; z-index: 10;" />
+    </el-header>
     <el-row style="padding: 0px 20px;">
       <el-col :span="12" style="padding: 10px;">
         <el-card>
-          <div>Lin1 Average OTD: 83.3%</div>
+          日：<el-date-picker v-model="value1" type="date" size="mini" placeholder="选择日期">
+          </el-date-picker>
+          <div style="margin-top: 20px;">Line1 Current OTD: 83.3%</div>
           <div class="chart" id="line1"></div>
         </el-card>
       </el-col>
       <el-col :span="12" style="padding: 10px;">
         <el-card>
-          <div>Lin2 Average OTD: 83.3%</div>
+          日：<el-date-picker v-model="value1" type="date" size="mini" placeholder="选择日期">
+          </el-date-picker>
+          <div style="margin-top: 20px;">Line2 Current OTD: 66.7%</div>
           <div class="chart" id="line4"></div>
         </el-card>
       </el-col>
@@ -17,11 +24,15 @@
     <el-row style="padding: 0px 20px;">
       <el-col :span="12" style="padding: 10px;">
         <el-card>
+          月：<el-date-picker v-model="value2" type="month" size="mini" placeholder="选择日期">
+          </el-date-picker>
           <div class="chart" id="line2"></div>
         </el-card>
       </el-col>
       <el-col :span="12" style="padding: 10px;">
         <el-card>
+          月：<el-date-picker v-model="value2" type="month" size="mini" placeholder="选择日期">
+          </el-date-picker>
           <div class="chart" id="line5"></div>
         </el-card>
       </el-col>
@@ -29,11 +40,15 @@
     <el-row style="padding: 0px 20px;">
       <el-col :span="12" style="padding: 10px;">
         <el-card>
+          年：<el-date-picker v-model="value3" type="year" size="mini" placeholder="选择日期">
+          </el-date-picker>
           <div class="chart" id="line3"></div>
         </el-card>
       </el-col>
       <el-col :span="12" style="padding: 10px;">
         <el-card>
+          年：<el-date-picker v-model="value3" type="year" size="mini" placeholder="选择日期">
+          </el-date-picker>
           <div class="chart" id="line6"></div>
         </el-card>
       </el-col>
@@ -46,9 +61,13 @@ export default {
   name: 'ReportOTD',
   data() {
     return {
+      value1: '2020.11.07',
+      value2: '2020.11',
+      value3: '2020',
     };
   },
-  created() { },
+  created() {
+  },
   mounted() {
     this.draw1();
     this.draw2();
@@ -56,6 +75,8 @@ export default {
     this.draw4();
     this.draw5();
     this.draw6();
+  },
+  watch: {
   },
   methods: {
     draw1() {
@@ -86,6 +107,15 @@ export default {
           label: {
             show: true,
             position: 'inside'
+          },
+          itemStyle: {
+            normal: {
+              color: item => {
+                if (item.data == 85) {
+                  return 'red'
+                }
+              }
+            }
           },
           markLine: {
             symbol: ['none', 'arrow'],
@@ -127,7 +157,7 @@ export default {
       var option2 = {
         title: {
           text: 'Line1',
-          subtext: 'Daily OTD (11月)'
+          subtext: 'Daily OTD'
         },
         tooltip: {
         },
@@ -180,7 +210,7 @@ export default {
       var option3 = {
         title: {
           text: 'Line1',
-          subtext: 'Monthly OTD (2020年)'
+          subtext: 'Monthly OTD '
         },
         tooltip: {},
         toolbox: {
@@ -207,7 +237,7 @@ export default {
         series: [{
           name: 'OTD',
           type: 'line',
-          data: [85.4, 89.7, 94.5, 91.5, 93.6, 98.6, 89.7, 94.5, 91.5, 93.6, 98.6],
+          data: [82.4, 89.7, 94.5, 91.5, 93.6, 98.6, 89.7, 94.5, 91.5, 93.6, 98.6],
           label: {
             show: true,
             position: 'top',
@@ -243,10 +273,19 @@ export default {
         series: [{
           name: 'Loop',
           type: 'bar',
-          data: [50, 70, 60, 55, 85, 60],
+          data: [64, 83, 70, 61, 42, 57],
           label: {
             show: true,
             position: 'inside'
+          },
+          itemStyle: {
+            normal: {
+              color: item => {
+                if (item.data == 83 || item.data == 42) {
+                  return 'red'
+                }
+              }
+            }
           },
           markLine: {
             symbol: ['none', 'arrow'],
@@ -288,7 +327,7 @@ export default {
       var option5 = {
         title: {
           text: 'Line2',
-          subtext: 'Daily OTD (11月)'
+          subtext: 'Daily OTD'
         },
         tooltip: {
         },
@@ -320,7 +359,7 @@ export default {
         series: [{
           name: 'OTD',
           type: 'line',
-          data: [83.7, 85.7, 89.5, 91.5, 87.6, 95.6],
+          data: [83.7, 75.7, 89.5, 91.5, 67.6, 95.6],
           label: {
             show: true,
             position: 'top',
@@ -341,7 +380,7 @@ export default {
       var option6 = {
         title: {
           text: 'Line2',
-          subtext: 'Monthly OTD (2020年)'
+          subtext: 'Monthly OTD'
         },
         tooltip: {},
         toolbox: {
@@ -368,7 +407,7 @@ export default {
         series: [{
           name: 'OTD',
           type: 'line',
-          data: [85.4, 89.7, 94.5, 91.5, 93.6, 98.6, 89.7, 94.5, 91.5, 93.6, 98.6],
+          data: [85.4, 79.7, 84.5, 91.5, 85.6, 88.6, 89.7, 74.5, 91.5, 73.6, 88.6],
           label: {
             show: true,
             position: 'top',

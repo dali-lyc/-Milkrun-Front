@@ -2,22 +2,28 @@
   <div class="body">
     <p class="header">欢迎访问milkrun实时系统</p>
     <el-row type="flex" style="margin: 30px;">
-      <el-col :span="4" :offset="6">
+      <el-col :span="4" :offset="5">
         <router-link to="/map" style="text-decoration: none">
           <el-card class="card1">
             <span>实时路线</span>
           </el-card>
         </router-link>
       </el-col>
-      <el-col :span="4" :offset="4">
-        <router-link to="/report" style="text-decoration: none">
+      <el-col :span="4" :offset="1">
+        <router-link to="/reportOTD" style="text-decoration: none">
           <el-card class="card2">
             <span>报表</span>
           </el-card>
         </router-link>
       </el-col>
+      <el-col :span="4" :offset="1">
+        <router-link to="/configure" style="text-decoration: none">
+          <el-card class="card3">
+            <span>配置</span>
+          </el-card>
+        </router-link>
+      </el-col>
     </el-row>
-    <div id="main" style="width: 600px;height:400px; text-align: center; display: inline-block;"></div>
   </div>
 </template>
 
@@ -64,6 +70,14 @@ export default {
 }
 .card2:hover {
   background: #0cab8d;
+}
+.card3 {
+  text-align: center;
+  background: #e56868;
+  border-color: #e56868;
+}
+.card3:hover {
+  background: #d35454;
 }
 .el-card span {
   color: #fff;
