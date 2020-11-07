@@ -72,4 +72,8 @@
   align-items: center;
   justify-content: center;
 }
+
+.mapboxgl-ctrl-operation {
+  pointer-events: initial;
+}
 </style>
