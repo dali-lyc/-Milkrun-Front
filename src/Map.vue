@@ -129,14 +129,24 @@ export default {
       console.log("open success");
     };
     this.websocket.onmessage = (msg) => {
-      console.l
-      const data = JSON.parse(msg.data)
+      const data = JSON.parse(msg.data);
       console.log(data);
-      let point = data.point
-      if (point.x && point.y) {
-        milkRun1Car.setLngLat([point.x, point.y])
+      let point = data.point;
+      if (
+        point.x &&
+        point.y &&
+        point.x > 0 &&
+        point.y > 0 &&
+        point.x < 19.94 &&
+        point.y < 16.3
+      ) {
+        if (point.x < 13 && point.y < 12 || point.x > 14.54 && point.x < 17.64 && point.y > 9.6 && point.y < 12.2 || point.x > 17.64 && point.y > 9.6) {
+          return;
+        } else {
+          milkRun1Car.setLngLat([point.x, point.y]);
+        }
       } else {
-        console.log("No signal")
+        console.log("No signal");
       }
     };
 
