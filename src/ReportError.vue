@@ -186,7 +186,7 @@ export default {
   text-align: center;
 }
 .chart {
-  height: 300px;
+  height: 400px;
   width: 600px;
 }
 </style>

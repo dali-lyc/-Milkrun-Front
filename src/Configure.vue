@@ -102,7 +102,7 @@ export default {
         "coordinate": "121.1', 56.8'"
       }],
       carData: [{
-        "id": "站点F-MR-01",
+        "id": "F-MR-01",
         "name": "成品1号车",
         "room": "CC-101",
         "speed": "5km/h"
