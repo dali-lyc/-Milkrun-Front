@@ -15,8 +15,14 @@ export default new Router({
       path: '/settlement',
       component: () => import('@/Settlement.vue'),
     }, {
-      path: '/report',
-      component: () => import('@/Report.vue'),
+      path: '/reportOTD',
+      component: () => import('@/ReportOTD.vue'),
+    }, {
+      path: '/reportLocation',
+      component: () => import('@/ReportLocation.vue'),
+    }, {
+      path: '/reportError',
+      component: () => import('@/ReportError.vue'),
     }, {
       path: '/map',
       component: () => import('@/Map.vue'),
