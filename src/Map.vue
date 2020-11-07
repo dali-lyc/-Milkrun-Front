@@ -53,7 +53,7 @@
             </router-link>
           </el-col>
           <el-col :span="10">
-            <router-link to="/reportLocation" style="text-decoration: none">
+            <router-link to="/reportStation" style="text-decoration: none">
               <el-card class="card2">
                 <p><span style="color: green;">4min</span> / 5min</p>
                 <b>Station2 efficiency</b>
