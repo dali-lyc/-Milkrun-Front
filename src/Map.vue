@@ -103,7 +103,7 @@ export default {
     }, 5000) */
 
     // add station
-    map.addSource("Station", {
+    /* map.addSource("Station", {
       type: "geojson",
       data: {
         type: "FeatureCollection",
@@ -135,7 +135,7 @@ export default {
           },
         }, ],
       },
-    });
+    }); */
   },
   methods: {},
 };
