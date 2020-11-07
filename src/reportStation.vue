@@ -1,5 +1,8 @@
 <template>
   <div class="body">
+    <el-header style="height: 10px;">
+      <img src="./assets/img/bottom.png" style="height: 10px; position: fixed; left: 0; width: 100%; z-index: 10;" />
+    </el-header>
     <el-row style="padding: 0px 20px;">
       <el-col :span="12" style="padding: 10px;">
         <el-card>
@@ -17,7 +20,7 @@
 
 <script>
 export default {
-  name: 'ReportLocation',
+  name: 'reportStation',
   data() {
     return {
     };
@@ -58,7 +61,7 @@ export default {
           data: [5, 8, 6, 10, 9, 7],
           label: {
             show: true,
-            position: 'inside'
+            position: 'top'
           }
         }, {
           name: 'Station3',
@@ -66,7 +69,7 @@ export default {
           data: [7, 5, 6, 3, 5, 9],
           label: {
             show: true,
-            position: 'inside'
+            position: 'top'
           }
         }]
       };
@@ -102,7 +105,7 @@ export default {
           data: [5, 8, 6, 10, 9, 7],
           label: {
             show: true,
-            position: 'inside'
+            position: 'top'
           }
         }, {
           name: 'Station3',
@@ -110,7 +113,7 @@ export default {
           data: [8, 4, 11, 6, 8, 4],
           label: {
             show: true,
-            position: 'inside'
+            position: 'top'
           }
         }]
       };

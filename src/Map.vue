@@ -1,6 +1,9 @@
 <template>
   <div class="body">
-    <p class="header">Milkrun Real-time system</p>
+    <el-header style="height: 10px;">
+      <img src="./assets/img/bottom.png" style="height: 10px; position: fixed; left: 0; width: 100%; z-index: 10;" />
+    </el-header>
+    <p class="header">Milkrun Real-time System</p>
     <el-row style="padding: 0px 20px;">
       <el-col :span="12" style="padding: 10px;">
         <el-card>
@@ -9,28 +12,28 @@
             <el-col :span="7">
               <router-link to="/reportOTD" style="text-decoration: none">
                 <el-card class="card1">
-                  <p style="margin-top: 45px;">80% / 95%</p>
-                  <p>Avg. OTD</p>
+                  <p style="margin: 40px 0 10px 0;"><span style="color: red;">83.3%</span> / 95%</p>
+                  <b>Avg. OTD</b>
                 </el-card>
               </router-link>
             </el-col>
             <el-col :span="10">
-              <router-link to="/reportLocation" style="text-decoration: none">
+              <router-link to="/reportStation" style="text-decoration: none">
                 <el-card class="card2">
-                  <p>2min / 5min</p>
-                  <p>location2 efficiency</p>
+                  <p><span style="color: red;">6min</span> / 5min</p>
+                  <b>Station2 efficiency</b>
                 </el-card>
                 <el-card class="card2">
-                  <p>4min / 5min</p>
-                  <p>location3 efficiency</p>
+                  <p><span style="color: green;">4min</span> / 5min</p>
+                  <b>Station3 efficiency</b>
                 </el-card>
               </router-link>
             </el-col>
             <el-col :span="7">
               <router-link to="/reportError" style="text-decoration: none">
                 <el-card class="card1">
-                  <p style="margin-top: 45px;">1 / 0</p>
-                  <p>Failure</p>
+                  <p style="margin: 40px 0 10px 0;"><span style="color: red;">1</span> / 0</p>
+                  <b>Failure</b>
                 </el-card>
               </router-link>
             </el-col>
@@ -43,24 +46,24 @@
           <el-row>
             <el-col :span="7">
               <el-card class="card1">
-                <p style="margin-top: 45px;">80% / 95%</p>
-                <p>Avg. OTD</p>
+                <p style="margin: 40px 0 10px 0;"><span style="color: red;">66.7%</span>/ 95%</p>
+                <b>Avg. OTD</b>
               </el-card>
             </el-col>
             <el-col :span="10">
               <el-card class="card2">
-                <p>2min / 5min</p>
-                <p>location2 efficiency</p>
+                <p><span style="color: green;">4min</span> / 5min</p>
+                <b>Station2 efficiency</b>
               </el-card>
               <el-card class="card2">
-                <p>4min / 5min</p>
-                <p>location3 efficiency</p>
+                <p><span style="color: red;">7min</span> / 5min</p>
+                <b>Station3 efficiency</b>
               </el-card>
             </el-col>
             <el-col :span="7">
               <el-card class="card1">
-                <p style="margin-top: 45px;">1 / 0</p>
-                <p>Failure</p>
+                <p style="margin: 40px 0 10px 0;"><span style="color: red;">2</span> / 0</p>
+                <b>Failure</b>
               </el-card>
             </el-col>
           </el-row>
